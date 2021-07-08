@@ -1,10 +1,8 @@
-import ProgTable from './ProgTable.svelte';
+import App from './App.svelte';
 
-const progtable = new ProgTable({
+const app = new App({
 	target: document.body,
-	props: {
-		name: 'world'
-	}
+	props: {}
 });
 
-export default progtable;
+export default app;

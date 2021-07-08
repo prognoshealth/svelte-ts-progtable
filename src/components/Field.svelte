@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type ColumnDefinition from "../ColumnDefinition";
+  import type ColumnDefinition from "./ColumnDefinition";
 
   export const column: ColumnDefinition = null;
   export const rowData: Array<string> = null;

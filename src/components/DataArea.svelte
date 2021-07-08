@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type ColumnDefinition from "../ColumnDefinition";
+  import type ColumnDefinition from "./ColumnDefinition";
   import DataRow from "./DataRow.svelte"
 
   export let columns: Array<ColumnDefinition> = [];

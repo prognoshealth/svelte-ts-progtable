@@ -1,4 +1,4 @@
-import ProgTable from "../ProgTable.svelte";
+import ProgTable from "../components/ProgTable.svelte";
 import { render, fireEvent } from "@testing-library/svelte";
 
 describe("should display an empty table", () => {
