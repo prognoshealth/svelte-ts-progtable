@@ -12,7 +12,6 @@
 
 <div class="progtable" id="progtable-{id}">
   <Header />
-  <ColumnHeader {columns} />
   <DataArea {columns} {rows} />
   <Footer />
 </div>

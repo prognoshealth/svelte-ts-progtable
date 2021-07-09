@@ -1,1 +1,1 @@
-<hr/>
+<section><hr /></section>

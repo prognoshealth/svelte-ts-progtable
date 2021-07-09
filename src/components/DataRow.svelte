@@ -6,6 +6,8 @@
   export const rowData: Array<string> = [];
 </script>
 
-{#each columns as column, index}
-  <Field {column} {rowData} {index} />
-{/each}
+<tr>
+  {#each columns as column, index}
+    <Field {column} {rowData} {index} />
+  {/each}
+</tr>

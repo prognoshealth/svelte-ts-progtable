@@ -8,4 +8,4 @@
   const fieldValue = rowData[index];
 </script>
 
-<div>{fieldValue}</div>
+<td class="field">{fieldValue}</td>

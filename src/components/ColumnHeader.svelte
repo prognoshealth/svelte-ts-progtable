@@ -4,6 +4,8 @@
   export let columns: Array<ColumnDefinition> = [];
 </script>
 
+<tr class="column-row">
 {#each columns as column}
-  <div>{column.displayName}</div>
+  <th class="column-head">{column.displayName}</th>
 {/each}
+</tr>
