@@ -5,14 +5,16 @@ import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
 import typescript from "@rollup/plugin-typescript";
-import pkg from './package.json';
+import pkg from "./package.json";
+import { defineConfig } from "rollup";
+import svelteDts from "svelte-dts";
 
 const production = !process.env.ROLLUP_WATCH;
 
 const name = pkg.name
-	.replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
-	.replace(/^\w/, m => m.toUpperCase())
-	.replace(/-\w/g, m => m[1].toUpperCase());
+  .replace(/^(@\S+\/)?(svelte-)?(\S+)/, "$3")
+  .replace(/^\w/, (m) => m.toUpperCase())
+  .replace(/-\w/g, (m) => m[1].toUpperCase());
 
 function serve() {
   let server;
@@ -39,7 +41,7 @@ function serve() {
   };
 }
 
-export default {
+export default defineConfig({
   input: "src/main.ts",
   output: [
     {
@@ -52,6 +54,7 @@ export default {
     { file: pkg.main, format: "umd", name },
   ],
   plugins: [
+    svelteDts({ output: pkg.types }),
     svelte({
       // enable run-time checks when not in production
       dev: !production,
@@ -93,4 +96,4 @@ export default {
   watch: {
     clearScreen: false,
   },
-};
+});
