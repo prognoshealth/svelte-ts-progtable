@@ -1,17 +1,17 @@
 <script lang="ts">
   import type ColumnDefinition from "./ColumnDefinition";
   import Header from "./Header.svelte";
-  import ColumnHeader from "./ColumnHeader.svelte";
   import DataArea from "./DataArea.svelte";
   import Footer from "./Footer.svelte";
 
+  export let title:string = "";
   export let id: string = "";
   export let columns: Array<ColumnDefinition> = [];
   export let rows: Array<Array<string>> = [];
 </script>
 
 <div class="progtable" id="progtable-{id}">
-  <Header />
+  <Header {title} />
   <DataArea {columns} {rows} />
   <Footer />
 </div>

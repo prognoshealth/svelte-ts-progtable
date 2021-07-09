@@ -1,7 +1,22 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
+  "svelte": "src/main.ts",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "name": "svelte-ts-progtable",
+  "description": "A simple datatable component for Svelte using typescript",
+  "directories": {
+    "example": "example"
+  },
+  "version": "0.0.1",
+  "keywords": [
+    "svelte table datatable datagrid progtable prog-table typescript"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
@@ -53,5 +68,15 @@
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prognoshealth/svelte-ts-progtable.git"
+  },
+  "author": "Aidan Reynolds, Principal Engineer, Prognos Health",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prognoshealth/svelte-ts-progtable/issues"
+  },
+  "homepage": "https://https://prognoshealth.com/"
 }
