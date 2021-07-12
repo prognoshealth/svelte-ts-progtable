@@ -17,7 +17,7 @@
     "dist"
   ],
   "scripts": {
-    "prepublishOnly": "npm run build",
+    "prepublish": "npm run build",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
