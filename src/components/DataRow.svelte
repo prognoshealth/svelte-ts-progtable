@@ -2,8 +2,8 @@
   import type ColumnDefinition from "./ColumnDefinition";
   import Field from "./Field.svelte";
 
-  export let columns: Array<ColumnDefinition> = null;
-  export const rowData: Array<string> = [];
+  export let columns: ColumnDefinition[] = [];
+  export let rowData: string[];
 </script>
 
 <tr>

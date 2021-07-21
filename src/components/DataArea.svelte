@@ -3,8 +3,8 @@
   import ColumnHeader from "./ColumnHeader.svelte";
   import DataRow from "./DataRow.svelte";
 
-  export let columns: Array<ColumnDefinition> = [];
-  export let rows: Array<Array<string>> = [];
+  export let columns: ColumnDefinition[] = [];
+  export let rows: string[][] = [];
 </script>
 
 <table class="data-table">

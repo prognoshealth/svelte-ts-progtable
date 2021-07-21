@@ -6,8 +6,9 @@
 
   export let title:string = "";
   export let id: string = "";
-  export let columns: Array<ColumnDefinition> = [];
-  export let rows: Array<Array<string>> = [];
+  // keeping these as simple arrays makes the coding more straightforward and faster.
+  export let columns: ColumnDefinition[] = [];
+  export let rows: string[][] = [];
 </script>
 
 <div class="progtable" id="progtable-{id}">
