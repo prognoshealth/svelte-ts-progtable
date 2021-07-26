@@ -1,7 +1,7 @@
 {
   "svelte": "src/main.ts",
   "module": "dist/index.mjs",
-  "main": "dist/index.js",
+  "main": "src/main.ts",
   "name": "svelte-ts-progtable",
   "types": "dist/svelte-ts-progtable.d.ts",
   "description": "A simple datatable component for Svelte using typescript",
