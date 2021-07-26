@@ -1,23 +1,11 @@
 {
+  "name": "svelte-ts-progtable",
   "svelte": "src/main.ts",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
-  "name": "svelte-ts-progtable",
   "types": "dist/svelte-ts-progtable.d.ts",
-  "description": "A simple datatable component for Svelte using typescript",
-  "directories": {
-    "example": "example"
-  },
-  "version": "0.0.1",
-  "keywords": [
-    "svelte table datatable datagrid progtable prog-table typescript"
-  ],
-  "files": [
-    "src",
-    "dist"
-  ],
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
@@ -49,9 +37,15 @@
     "tslib": "^2.0.0",
     "typescript": "^3.9.3"
   },
-  "dependencies": {
-    "sirv-cli": "^1.0.0"
-  },
+  "keywords": [
+    "svelte table datatable datagrid progtable prog-table typescript"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ],
+  "description": "A simple datatable component for Svelte using typescript",
+  "version": "0.0.1",
   "jest": {
     "transform": {
       "^.+\\.svelte$": [
@@ -71,6 +65,12 @@
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
     ]
+  },
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0"
   },
   "repository": {
     "type": "git",
