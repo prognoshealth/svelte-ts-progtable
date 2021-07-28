@@ -60,7 +60,7 @@ export default defineConfig({
       file: pkg.browser,
     },
     //{ file: pkg.module, format: "es" },
-    { file: pkg.main, format: "cjs", exports: "auto" },
+    //{ file: pkg.main, format: "cjs", exports: "auto" },
   ],
   external: [...Object.keys(pkg.dependencies || {})],
   plugins: [
