@@ -12,7 +12,7 @@ import svelteDts from "svelte-dts";
 const production = !process.env.ROLLUP_WATCH;
 
 // delete old typings to avoid issues
-require('fs').unlink('dist/index.d.ts', (err) => {});
+require("fs").unlink("dist/index.d.ts", (err) => {});
 
 const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, "$3")
@@ -47,13 +47,19 @@ function serve() {
 export default defineConfig({
   input: "src/main.ts",
   output: [
+    // {
+    //   sourcemap: !production,
+    //   format: "iife",
+    //   name: "progtable",
+    //   file: pkg.browser,
+    // },
     {
       sourcemap: !production,
-      format: "iife",
+      format: "umd",
       name: "progtable",
       file: pkg.browser,
     },
-    { file: pkg.module, format: "es" },
+    //{ file: pkg.module, format: "es" },
     { file: pkg.main, format: "cjs", exports: "auto" },
   ],
   external: [...Object.keys(pkg.dependencies || {})],
