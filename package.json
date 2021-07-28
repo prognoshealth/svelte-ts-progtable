@@ -3,6 +3,7 @@
   "svelte": "src/main.ts",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
+  "browser": "dist/index.bundle.js",
   "types": "dist/svelte-ts-progtable.d.ts",
   "scripts": {
     "prepublish": "npm run build",
@@ -12,6 +13,9 @@
     "validate": "svelte-check",
     "test": "jest",
     "svelte-dts": "svelte-dts"
+  },
+  "peerDependencies": {
+    "svelte": "^3.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.11.5",
@@ -28,7 +32,7 @@
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^6.0.0",
     "rollup-plugin-terser": "^7.0.0",
-    "svelte": "^3.0.0",
+    "sirv-cli": "^1.0.0",
     "svelte-check": "^1.0.0",
     "svelte-dts": "^0.3.2",
     "svelte-jester": "^1.1.5",
@@ -70,7 +74,7 @@
     "example": "example"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.0"
+    
   },
   "repository": {
     "type": "git",

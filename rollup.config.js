@@ -11,6 +11,9 @@ import svelteDts from "svelte-dts";
 
 const production = !process.env.ROLLUP_WATCH;
 
+// delete old typings to avoid issues
+require('fs').unlink('dist/index.d.ts', (err) => {});
+
 const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, "$3")
   .replace(/^\w/, (m) => m.toUpperCase())
@@ -47,12 +50,13 @@ export default defineConfig({
     {
       sourcemap: !production,
       format: "iife",
-      name: "app",
-      file: "public/build/bundle.js",
+      name: "progtable",
+      file: pkg.browser,
     },
     { file: pkg.module, format: "es" },
-    { file: pkg.main, format: "umd", name },
+    { file: pkg.main, format: "cjs", exports: "auto" },
   ],
+  external: [...Object.keys(pkg.dependencies || {})],
   plugins: [
     svelteDts({ output: pkg.types }),
     svelte({
