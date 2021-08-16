@@ -47,20 +47,20 @@ function serve() {
 export default defineConfig({
   input: "src/main.ts",
   output: [
-    // {
-    //   sourcemap: !production,
-    //   format: "iife",
-    //   name: "progtable",
-    //   file: pkg.browser,
-    // },
+    {
+      sourcemap: !production,
+      format: "iife",
+      name: "progtable",
+      file: pkg.browser,
+    },
     {
       sourcemap: !production,
       format: "umd",
       name: "progtable",
       file: pkg.main,
     },
-    //{ file: pkg.module, format: "es" },
-    //{ file: pkg.main, format: "cjs", exports: "auto" },
+    { file: pkg.module, format: "es" },
+    // { file: pkg.main, format: "cjs", exports: "auto" },
   ],
   external: [...Object.keys(pkg.dependencies || {})],
   plugins: [
