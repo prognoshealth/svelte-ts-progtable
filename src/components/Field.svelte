@@ -5,7 +5,7 @@
   export let rowData: string[] = [];
   export let index: number;
 
-  const fieldValue = rowData[index];
+  const fieldValue: string = rowData[index];
 </script>
 
-<td class="field">{fieldValue}</td>
+<td class="field {column.classname}">{fieldValue}</td>

@@ -7,9 +7,11 @@
   export let rows: string[][] = [];
 </script>
 
-<table class="data-table">
-  <ColumnHeader {columns} />
-  {#each rows as rowData}
-    <DataRow {columns} {rowData} />
-  {/each}
-</table>
+<section>
+  <table class="data-table">
+    <ColumnHeader {columns} />
+    {#each rows as rowData}
+      <DataRow {columns} {rowData} />
+    {/each}
+  </table>
+</section>
