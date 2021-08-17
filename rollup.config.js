@@ -5,9 +5,10 @@ import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
 import typescript from "@rollup/plugin-typescript";
-import pkg from "./package.json";
-import { defineConfig } from "rollup";
+//import { defineConfig } from "rollup";
 import svelteDts from "svelte-dts";
+
+import pkg from "./package.json";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -44,27 +45,26 @@ function serve() {
   };
 }
 
-export default defineConfig({
+export default {
   input: "src/main.ts",
   output: [
     {
-      sourcemap: !production,
-      format: "iife",
-      name: "progtable",
-      file: pkg.browser,
+      sourcemap: production,
+      format: "es",
+      file: pkg.module,
     },
     {
-      sourcemap: !production,
+      sourcemap: production,
       format: "umd",
-      name: "progtable",
+      name,
       file: pkg.main,
     },
-    { file: pkg.module, format: "es" },
-    // { file: pkg.main, format: "cjs", exports: "auto" },
   ],
-  external: [...Object.keys(pkg.dependencies || {})],
+  //external: [...Object.keys(pkg.dependencies || {})],
   plugins: [
     svelteDts({ output: pkg.types }),
+    commonjs(),
+    typescript(),
     svelte({
       // enable run-time checks when not in production
       dev: !production,
@@ -85,11 +85,6 @@ export default defineConfig({
       browser: true,
       dedupe: ["svelte"],
     }),
-    commonjs(),
-    typescript({
-      sourceMap: !production,
-      inlineSources: !production,
-    }),
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated
@@ -106,4 +101,4 @@ export default defineConfig({
   watch: {
     clearScreen: false,
   },
-});
+};
