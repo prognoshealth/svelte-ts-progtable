@@ -1,7 +1,8 @@
 export default class ColumnDefinition {
   constructor(
-    public readonly key: string,
-    public readonly displayName: string,
-    public readonly classname: string
+    public id?: string,
+    public displayName: string = "",
+    public classname: string = "",
+    public titleText: string = ""
   ) {}
 }

@@ -6,7 +6,6 @@
   "browser": "dist/index.bundle.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublishOnly": "npm run svelte-check && npm run build",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
@@ -44,8 +43,7 @@
     "svelte table datatable datagrid progtable prog-table typescript"
   ],
   "files": [
-    "src",
-    "dist"
+    "src"
   ],
   "description": "A simple datatable component for Svelte using typescript",
   "version": "0.0.1",

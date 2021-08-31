@@ -5,6 +5,6 @@
 <section>
   {#if title.length > 0}
     <div class="title">{title}</div>
+    <hr />
   {/if}
-  <hr />
 </section>

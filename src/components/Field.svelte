@@ -1,11 +1,7 @@
 <script lang="ts">
-  import type ColumnDefinition from "./ColumnDefinition";
+  import type FieldDefinition from "./FieldDefinition";
 
-  export let column: ColumnDefinition = null;
-  export let rowData: string[] = [];
-  export let index: number;
-
-  const fieldValue: string = rowData[index];
+  export let field: FieldDefinition;
 </script>
 
-<td class="field {column.classname}">{fieldValue}</td>
+<td class="field {field.classname} " title={field.titleText}>{field.value}</td>

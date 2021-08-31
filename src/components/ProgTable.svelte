@@ -1,5 +1,6 @@
 <script lang="ts">
   import type ColumnDefinition from "./ColumnDefinition";
+  import type FieldDefinition from "./FieldDefinition";
   import Header from "./Header.svelte";
   import DataArea from "./DataArea.svelte";
   import Footer from "./Footer.svelte";
@@ -7,13 +8,13 @@
   export let title: string = "";
   export let id: string = "";
   // keeping these as simple arrays makes the coding more straightforward and faster.
-  export let columns: ColumnDefinition[] = [];
-  export let rows: string[][] = [];
+  export let columnDefinitions: ColumnDefinition[] = [];
+  export let fieldDefinitions: FieldDefinition[][] = [];
 </script>
 
 <div class="progtable" {id}>
   <Header {title} />
-  <DataArea {columns} {rows} />
+  <DataArea {columnDefinitions} {fieldDefinitions} />
   <Footer />
 </div>
 

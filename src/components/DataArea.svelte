@@ -2,16 +2,17 @@
   import type ColumnDefinition from "./ColumnDefinition";
   import ColumnHeader from "./ColumnHeader.svelte";
   import DataRow from "./DataRow.svelte";
+  import type FieldDefinition from "./FieldDefinition";
 
-  export let columns: ColumnDefinition[] = [];
-  export let rows: string[][] = [];
+  export let columnDefinitions: ColumnDefinition[] = [];
+  export let fieldDefinitions: FieldDefinition[][];
 </script>
 
 <section>
   <table class="data-table">
-    <ColumnHeader {columns} />
-    {#each rows as rowData}
-      <DataRow {columns} {rowData} />
+    <ColumnHeader {columnDefinitions} />
+    {#each fieldDefinitions as fieldDefinitionRow}
+      <DataRow {fieldDefinitionRow}/>
     {/each}
   </table>
 </section>
