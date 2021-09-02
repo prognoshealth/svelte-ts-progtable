@@ -6,13 +6,12 @@
   import Footer from "./Footer.svelte";
 
   export let title: string = "";
-  export let id: string = "";
   // keeping these as simple arrays makes the coding more straightforward and faster.
   export let columnDefinitions: ColumnDefinition[] = [];
   export let fieldDefinitions: FieldDefinition[][] = [];
 </script>
 
-<div class="progtable" {id}>
+<div class="progtable" >
   <Header {title} />
   <DataArea {columnDefinitions} {fieldDefinitions} />
   <Footer />
